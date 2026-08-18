@@ -150,25 +150,58 @@ Training and experimentation were performed using a GPU-enabled Google Colab env
 AI-Based-Restoration-of-Degraded-Images-for-Semiconductor-Inspection/
 │
 ├── run.py
+├── train.py
 ├── requirements.txt
 ├── README.md
+├── wafer_endeavours_ps01ppt.pptx
 │
-└── models/
-    ├── model.py
-    └── best_nafnet_sr_l1_ssim_aug.pth
+├── models/
+│   ├── model.py
+│   └── best_nafnet_sr_l1_ssim_aug.pth
 ```
-
-### File Description
-
-| File / Folder                           | Purpose                                           |
-| --------------------------------------- | ------------------------------------------------- |
-| `run.py`                                | Main evaluation and inference entry point         |
-| `requirements.txt`                      | Required Python dependencies with version details |
-| `README.md`                             | Project documentation and execution instructions  |
-| `models/model.py`                       | NAFNetSR model architecture                       |
-| `models/best_nafnet_sr_l1_ssim_aug.pth` | Trained model weights                             |
-
 ---
+## Model Comparison
+
+The proposed NAFNet restoration model was compared with the baseline model
+using PSNR, SSIM, and LPIPS on the validation dataset.
+
+| Model | PSNR (dB) ↑ | SSIM ↑ | LPIPS ↓ |
+|---|---:|---:|---:|
+| Baseline | ~28.2 | ~0.76 | ~0.30 |
+| **NAFNet + L1 + SSIM + Augmentation** | **28.3889** | **0.772883** | **0.261666** |
+
+### Performance Summary
+
+The proposed **NAFNet + L1 + SSIM + Augmentation** configuration achieved:
+
+- **PSNR:** 28.3889 dB
+- **SSIM:** 0.772883
+- **LPIPS:** 0.261666
+- **Validation images:** 640
+
+For PSNR and SSIM, higher values indicate better restoration quality.
+For LPIPS, lower values indicate better perceptual similarity.
+
+## Training Results
+
+The final model was trained using:
+
+- **Architecture:** NAFNet
+- **Loss:** L1 + 0.2 × SSIM
+- **Augmentation:** Paired geometric augmentation
+- **Random seed:** 42
+- **Best epoch:** 9
+- **Best validation PSNR during training:** 25.8171 dB
+- **Total training time:** 2849.27 seconds (~47.5 minutes)
+
+### Complete Validation Results
+
+| Metric | Result |
+|---|---:|
+| Validation Images | 640 |
+| Average PSNR | **28.3889 dB** |
+| Average SSIM | **0.772883** |
+| Average LPIPS | **0.261666** |
 
 ## Environment Setup
 
