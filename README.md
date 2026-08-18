@@ -195,7 +195,7 @@ requirements.txt
 Clone the repository:
 
 ```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
+git clone https://github.com/Kani0706/AI-Based-Restoration-of-Degraded-Images-for-Semiconductor-Inspection-.git
 ```
 
 Enter the repository:
