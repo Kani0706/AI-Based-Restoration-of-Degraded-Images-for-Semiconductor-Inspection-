@@ -153,7 +153,6 @@ AI-Based-Restoration-of-Degraded-Images-for-Semiconductor-Inspection/
 ├── train.py
 ├── requirements.txt
 ├── README.md
-├── wafer_endeavours_ps01ppt.pptx
 │
 ├── models/
 │   ├── model.py
@@ -514,3 +513,8 @@ python run.py test/noisy test_output
 ```
 
 The system reads all `.npy` files from the input directory and generates one restored `.npy` file for each input while preserving filenames and satisfying the required output format.
+## Project Presentation
+
+The complete project presentation is available here:
+
+[View Project Presentation]https://drive.google.com/file/d/1lUnIj_bIRwHtWYuGVjebXIdjzXNCom4T/view?usp=drivesdk
